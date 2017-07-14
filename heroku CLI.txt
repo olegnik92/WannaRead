@@ -1,0 +1,5 @@
+dotnet publish -c Release
+docker build -t wanna-read ./bin/Release/netcoreapp1.0/publish
+heroku container:login
+docker tag wanna-read registry.heroku.com/wanna-read/web
+docker push registry.heroku.com/wanna-read/web
